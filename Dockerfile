@@ -6,17 +6,17 @@ cd /usr/local/src && \
 curl -O https://nginx.org/download/nginx-1.19.2.tar.gz  && \
 tar -xzf nginx-1.19.2.tar.gz && \
 apt update && \
-apt install wget && \
+apt install wget -y && \
 wget https://github.com/openresty/echo-nginx-module/archive/v0.62.tar.gz && \
 tar -xzf v0.62.tar.gz
 
 # install some required
 RUN \
-apt install gcc && \
-apt install libpcre3 libpcre3-dev && \
-apt install openssl libssl-dev && \
-apt install zlib1g.dev && \
-apt install make
+apt install gcc -y && \
+apt install libpcre3 libpcre3-dev -y && \
+apt install openssl libssl-dev -y && \
+apt install zlib1g.dev -y && \
+apt install make -y
 
 # rebuild nginx with echo module
 RUN \  
